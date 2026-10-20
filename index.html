@@ -1,0 +1,1148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sk Abdul Farzon | FinOps Executive, Accounts Payable &amp; Procure-to-Pay</title>
+<meta name="description" content="Sk Abdul Farzon is a FinOps executive at Swiggy in Accounts Payable and Procure-to-Pay, working in Oracle Fusion Cloud and SAP Concur. Advance POs, vendor onboarding, agreement coordination and process training.">
+<meta name="theme-color" content="#0A0E13">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sk Abdul Farzon | FinOps Executive, Accounts Payable &amp; Procure-to-Pay">
+<meta property="og:description" content="Sk Abdul Farzon is a FinOps executive at Swiggy in Accounts Payable and Procure-to-Pay, working in Oracle Fusion Cloud and SAP Concur. Advance POs, vendor onboarding, agreement coordination and process training.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0E13'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='42' text-anchor='middle' fill='%23CBA86A'%3EF%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
+<style>
+:root {
+  /* Layout: ledger-paper logic. Hero = headline beside a payment voucher; results read as a Before / After ledger closed with a double rule; the payment trail is a real 7-stage sequence. One dark look by design. */
+  --ink: #0A0E13;
+  --ink-2: #10161D;
+  --ink-3: #18212B;
+  --rule: #263140;
+  --rule-soft: #1A222C;
+  --text: #ECE9E2;
+  --dim: #98A2B0;
+  --faint: #6B7787;
+  --brass: #CBA86A;
+  --brass-dim: #8A7345;
+  --brass-wash: rgba(203, 168, 106, 0.12);
+  --ok: #67B8A4;
+  --risk: #D27A6A;
+  --risk-wash: rgba(210, 122, 106, 0.12);
+  --f-display: 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --f-body: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  color-scheme: dark;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text);
+  font: 400 1rem/1.6 var(--f-body);
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--ink);
+  z-index: 10;
+}
+.wrap { max-width: 1120px; margin: 0 auto; }
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+section[id] { scroll-margin-top: 76px; }
+
+/* Header */
+.top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 9;
+  background: var(--ink);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
+.mark { font: 400 1.15rem var(--f-display); letter-spacing: 0.01em; text-decoration: none; }
+.mark span { color: var(--brass); }
+.top nav { display: flex; gap: 18px; }
+.top nav a {
+  font: 500 0.72rem/1 var(--f-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+  text-decoration: none;
+  padding: 8px 0;
+}
+.top nav a:hover { color: var(--brass); }
+@media (max-width: 960px) { .top nav a:not(.keep) { display: none; } }
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+  gap: 56px;
+  align-items: center;
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+.eyebrow {
+  margin: 0;
+  font: 500 0.72rem/1.6 var(--f-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+h1 {
+  margin: 20px 0 24px;
+  font: 350 clamp(2.6rem, 6.4vw, 5.3rem)/1.02 var(--f-display);
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+}
+h1 em { font-style: italic; font-weight: 300; color: var(--brass); }
+.lede { margin: 0; max-width: 56ch; font-size: 1.1rem; color: var(--dim); }
+.lede strong { color: var(--text); font-weight: 500; }
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 20px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text);
+  font: 500 0.9rem var(--f-body);
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.btn:hover { border-color: var(--brass); color: var(--brass); }
+.btn.primary { background: var(--brass); border-color: var(--brass); color: var(--ink); }
+.btn.primary:hover { background: var(--text); border-color: var(--text); color: var(--ink); }
+
+/* Voucher */
+.voucher { position: relative; background: var(--ink-2); border: 1px solid var(--rule); font-family: var(--f-mono); }
+.v-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--dim);
+}
+.v-rows { list-style: none; margin: 0; padding: 0; }
+.v-rows li {
+  display: grid;
+  grid-template-columns: 12px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-bottom: 1px solid var(--rule-soft);
+  font-size: 0.8rem;
+}
+.v-rows i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--ok);
+  animation: tick 0.5s ease-out backwards;
+  animation-delay: calc(var(--n) * 0.18s + 0.2s);
+}
+@keyframes tick { from { transform: scale(0.3); background: var(--ink-3); } }
+.v-rows b { font-weight: 500; font-size: 0.66rem; letter-spacing: 0.1em; color: var(--faint); }
+.v-foot { display: flex; align-items: baseline; gap: 12px; padding: 18px 18px 40px; font-size: 0.74rem; color: var(--dim); letter-spacing: 0.08em; text-transform: uppercase; }
+.v-foot .utr { flex: 1; border-bottom: 1px dotted var(--faint); height: 1em; }
+.stamp {
+  position: absolute;
+  right: 14px;
+  bottom: -16px;
+  transform: rotate(-5deg);
+  border: 2px solid var(--brass);
+  background: var(--ink);
+  color: var(--brass);
+  padding: 6px 12px;
+  font: 500 0.74rem var(--f-mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 48px; padding-top: 48px; padding-bottom: 56px; }
+  .voucher { max-width: 480px; }
+}
+
+/* Section scaffolding */
+.block { padding-top: 88px; }
+.sec-label { margin: 0 0 14px; font: 500 0.72rem/1 var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); }
+h2 { margin: 0; max-width: 20ch; font: 350 clamp(2rem, 4.2vw, 3.1rem)/1.1 var(--f-display); letter-spacing: -0.015em; text-wrap: balance; }
+.sec-sub { margin: 16px 0 0; max-width: 60ch; color: var(--dim); }
+.sec-head { margin-bottom: 40px; }
+
+/* Ledger of results */
+.ledger { border-top: 1px solid var(--rule); }
+.l-row { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.05fr) minmax(0, 1.05fr); gap: 32px; padding: 32px 0; border-bottom: 1px solid var(--rule); }
+.l-row.head { padding: 14px 0; font: 500 0.7rem var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.l-row.last { border-bottom: 4px double var(--brass-dim); }
+.metric h3 { margin: 0 0 8px; font: 400 1.35rem/1.25 var(--f-display); }
+.metric p { margin: 0; max-width: 34ch; font-size: 0.92rem; color: var(--dim); }
+.cell { min-width: 0; }
+.cell::before { content: attr(data-label); display: block; margin-bottom: 12px; font: 500 0.68rem var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+.val { margin: 14px 0 0; font: 400 1.65rem/1.15 var(--f-display); color: var(--dim); }
+.after .val { color: var(--text); text-decoration: underline double; text-decoration-color: var(--brass); text-decoration-thickness: 1px; text-underline-offset: 7px; }
+@media (min-width: 861px) { .cell::before { display: none; } }
+@media (max-width: 860px) {
+  .l-row { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 28px 0; }
+  .l-row.head { display: none; }
+}
+.days { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.d { height: 30px; display: grid; place-items: center; border: 1px solid var(--risk); background: var(--risk-wash); color: var(--risk); font: 500 0.62rem var(--f-mono); letter-spacing: 0.04em; }
+.d.on { border-color: var(--brass); background: var(--brass); color: var(--ink); }
+.d.off { border: 1px dashed var(--rule); background: transparent; color: var(--faint); }
+.track { position: relative; height: 16px; background: var(--ink-3); }
+.fill { position: absolute; top: 0; bottom: 0; left: 0; }
+.fill.risk { background: var(--risk); }
+.fill.good { background: var(--brass); }
+.fill.more { background: repeating-linear-gradient(90deg, var(--risk) 0 4px, transparent 4px 8px); opacity: 0.7; }
+.axis { position: relative; height: 18px; margin-top: 6px; font: 500 0.62rem var(--f-mono); color: var(--faint); }
+.axis span { position: absolute; top: 0; transform: translateX(-50%); }
+.axis span:first-child { transform: none; }
+.axis span:last-child { transform: translateX(-100%); }
+.ticks { display: flex; flex-wrap: wrap; gap: 4px; }
+.t { width: 10px; height: 30px; background: var(--risk); }
+.t.maybe { background: transparent; border: 1px dashed var(--risk); }
+.blk { display: flex; align-items: center; width: max-content; max-width: 100%; height: 30px; padding: 0 12px; border: 1px solid var(--brass); background: var(--brass-wash); color: var(--brass); font: 500 0.7rem var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; }
+.facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin: 36px 0 0; }
+.facts div { padding-left: 16px; border-left: 1px solid var(--rule); }
+.facts dt { font: 500 0.66rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.facts dd { margin: 4px 0 0; font: 400 1.5rem/1.2 var(--f-display); }
+@media (max-width: 700px) { .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Payment trail */
+.trail { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 48px; align-items: start; }
+.stages { display: flex; flex-direction: column; }
+.stage {
+  appearance: none;
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
+  min-height: 64px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--dim);
+  font: 500 1rem var(--f-body);
+  text-align: left;
+  cursor: pointer;
+}
+.stage::before { content: ""; position: absolute; left: 15px; top: 50%; width: 1px; height: 100%; background: var(--rule); }
+.stage:last-child::before { display: none; }
+.stage .n {
+  position: relative;
+  z-index: 1;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--rule);
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--dim);
+  font: 500 0.72rem var(--f-mono);
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.stage .k { display: block; font: 500 0.64rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.stage:hover { color: var(--text); }
+.stage:hover .n { border-color: var(--brass); }
+.stage[aria-selected="true"] { color: var(--text); }
+.stage[aria-selected="true"] .n { background: var(--brass); border-color: var(--brass); color: var(--ink); }
+.panel { min-height: 440px; padding: 32px; background: var(--ink-2); border: 1px solid var(--rule); }
+.panel .meta { margin: 0; font: 500 0.7rem/1.5 var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); }
+.panel h3 { margin: 12px 0 14px; font: 350 clamp(1.6rem, 3vw, 2.2rem)/1.15 var(--f-display); letter-spacing: -0.01em; text-wrap: balance; }
+.panel .lead { margin: 0 0 20px; max-width: 56ch; color: var(--dim); }
+.panel ul { display: grid; gap: 12px; margin: 0 0 28px; padding: 0; list-style: none; }
+.panel li { position: relative; padding-left: 22px; }
+.panel li::before { content: ""; position: absolute; left: 0; top: 0.85em; width: 10px; height: 1px; background: var(--brass); }
+.glance { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0 16px; margin: 0; border-top: 1px solid var(--rule); }
+.glance div { padding-top: 14px; }
+.glance dt { font: 500 0.64rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.glance dd { margin: 4px 0 0; font: 400 1.05rem/1.35 var(--f-display); }
+.fade { animation: rise 0.32s ease-out; }
+@keyframes rise { from { opacity: 0; transform: translateY(6px); } }
+@media (max-width: 860px) {
+  .trail { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .stages { flex-direction: row; gap: 8px; overflow-x: auto; padding-bottom: 8px; }
+  .stage { flex: none; min-height: 0; grid-template-columns: 28px auto; gap: 10px; padding: 6px 16px 6px 6px; border: 1px solid var(--rule); border-radius: 999px; }
+  .stage::before { display: none; }
+  .stage .n { width: 28px; height: 28px; }
+  .stage .k { display: none; }
+  .stage[aria-selected="true"] { border-color: var(--brass); }
+  .panel { min-height: 0; padding: 22px; }
+}
+
+/* Case files */
+.case { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 24px 56px; padding: 40px 0; border-top: 1px solid var(--rule); }
+.case:last-child { border-bottom: 1px solid var(--rule); }
+.tag { margin: 0; font: 500 0.7rem var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); }
+.case h3 { margin: 10px 0 0; font: 350 clamp(1.5rem, 2.6vw, 2rem)/1.15 var(--f-display); text-wrap: balance; }
+.case dl { display: grid; gap: 22px; margin: 0; }
+.case dl > div { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 16px; }
+.case dt { padding-top: 0.35em; font: 500 0.68rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.case dd { margin: 0; }
+.case dd ul { display: grid; gap: 6px; margin: 0; padding-left: 1.1em; }
+.case li::marker { color: var(--brass-dim); }
+.case .out { color: var(--brass); }
+@media (max-width: 860px) {
+  .case { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .case dl > div { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+}
+
+/* Toolkit */
+.kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 40px; }
+.kit h3 { margin: 0 0 14px; font: 500 0.72rem var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); }
+.kit ul { margin: 0; padding: 0; list-style: none; }
+.kit li { padding: 11px 0; border-top: 1px solid var(--rule-soft); }
+.kit li small { display: block; font-size: 0.82rem; color: var(--dim); }
+
+/* Career */
+.career { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 56px; }
+.role { padding-top: 22px; border-top: 1px solid var(--rule); }
+.when { margin: 0; font: 500 0.7rem var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); }
+.role h3 { margin: 10px 0 4px; font: 350 clamp(1.5rem, 2.6vw, 2rem)/1.15 var(--f-display); }
+.org { margin: 0 0 20px; color: var(--dim); }
+.role ul { display: grid; gap: 10px; margin: 0; padding-left: 1.1em; }
+.role li::marker { color: var(--brass-dim); }
+.edu { padding-top: 22px; border-top: 1px solid var(--rule); }
+.edu h3 { margin: 0 0 6px; font: 500 0.7rem var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--brass); }
+.edu .row { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--rule-soft); }
+.edu .row span:last-child { font: 400 0.82rem var(--f-mono); color: var(--dim); white-space: nowrap; }
+.edu .sub { margin-top: 28px; }
+.langs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.chip { padding: 6px 12px; border: 1px solid var(--rule); font: 500 0.78rem var(--f-mono); }
+@media (max-width: 860px) { .career { grid-template-columns: minmax(0, 1fr); gap: 40px; } }
+
+/* Contact */
+.contact { padding-top: 104px; padding-bottom: 72px; }
+.contact h2 { max-width: 16ch; font-size: clamp(2.2rem, 5vw, 3.8rem); }
+.c-list { margin: 36px 0 0; border-top: 1px solid var(--rule); }
+.c-row { display: grid; grid-template-columns: 110px minmax(0, 1fr) auto; gap: 16px; align-items: center; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+.c-row dt { font: 500 0.68rem var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--faint); }
+.c-row dd { margin: 0; font: 400 1.3rem/1.3 var(--f-display); overflow-wrap: anywhere; }
+.c-row .btn { padding: 8px 14px; font-size: 0.8rem; }
+@media (max-width: 600px) {
+  .c-row { grid-template-columns: minmax(0, 1fr) auto; gap: 8px 16px; }
+  .c-row dt { grid-column: 1 / -1; }
+}
+footer { padding-top: 20px; padding-bottom: 32px; border-top: 1px solid var(--rule-soft); font: 400 0.72rem var(--f-mono); letter-spacing: 0.08em; color: var(--faint); }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+
+/* What I do */
+.modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 32px 28px; }
+.mode { padding-top: 18px; border-top: 2px solid var(--rule); }
+.mode.train { border-top-color: var(--brass); }
+.m-tag { margin: 0; font: 500 0.7rem/1.4 var(--f-mono); letter-spacing: 0.14em; text-transform: uppercase; color: var(--dim); }
+.mode.train .m-tag, .t-group .m-tag { color: var(--brass); }
+.mode h3 { margin: 10px 0 14px; font: 350 1.35rem/1.2 var(--f-display); text-wrap: balance; }
+.mode ul { display: grid; gap: 8px; margin: 0; padding-left: 1.1em; font-size: 0.93rem; color: var(--dim); }
+.mode li::marker { color: var(--brass-dim); }
+.go { display: inline-block; margin-top: 12px; padding-bottom: 2px; border-bottom: 1px solid var(--brass-dim); color: var(--brass); font: 500 0.72rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; }
+.go:hover { border-color: var(--brass); }
+.mode .go { margin-top: 18px; }
+
+/* Process training */
+.train-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px 56px; align-items: end; margin-bottom: 40px; }
+.train-lead { margin: 0; max-width: 56ch; font-size: 1.05rem; color: var(--dim); }
+.train-lead strong { color: var(--text); font-weight: 500; }
+.t-wrap { border: 1px solid var(--rule); border-top: 2px solid var(--brass); background: var(--rule); }
+.t-groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; }
+.t-group { padding: 28px; background: var(--ink-2); }
+.t-group h3 { margin: 8px 0 16px; font: 350 1.35rem/1.2 var(--f-display); }
+.t-group ul { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; }
+.t-group li { position: relative; padding-left: 22px; }
+.t-group li::before { content: ""; position: absolute; left: 0; top: 0.85em; width: 10px; height: 1px; background: var(--brass); }
+.t-note { margin: 48px 0 0; max-width: 40ch; font: italic 300 clamp(1.4rem, 2.6vw, 1.9rem)/1.3 var(--f-display); color: var(--text); text-wrap: balance; }
+@media (max-width: 860px) { .train-top { grid-template-columns: minmax(0, 1fr); align-items: start; } }
+@media (max-width: 700px) { .t-groups { grid-template-columns: minmax(0, 1fr); } .t-group { padding: 22px; } }
+
+/* Workflow strips */
+.sub-head { margin: 56px 0 6px; font: 350 1.5rem/1.2 var(--f-display); }
+.sub-note { margin: 0 0 28px; max-width: 60ch; color: var(--dim); }
+.flow { display: grid; grid-template-columns: repeat(var(--cols, 6), minmax(0, 1fr)); margin: 0; padding: 0; list-style: none; }
+.flow li { position: relative; padding-right: 18px; }
+.flow li::before { content: ""; position: absolute; top: 14px; left: 34px; right: 6px; height: 1px; background: var(--rule); }
+.flow li:last-child::before { display: none; }
+.f-n { position: relative; z-index: 1; display: grid; place-items: center; width: 28px; height: 28px; border: 1px solid var(--brass-dim); border-radius: 50%; background: var(--ink); color: var(--brass); font: 500 0.7rem var(--f-mono); }
+.f-mode { display: block; margin: 14px 0 6px; font: 500 0.64rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.flow h4 { margin: 0 0 6px; font: 400 1.1rem/1.25 var(--f-display); }
+.flow p { margin: 0; font-size: 0.86rem; color: var(--dim); }
+@media (max-width: 1000px) { .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; } .flow li::before { display: none; } }
+@media (max-width: 560px) { .flow { grid-template-columns: minmax(0, 1fr); } }
+
+/* Role tags */
+.mt { display: inline-block; padding: 3px 8px; border: 1px solid var(--rule); font: 500 0.62rem var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--dim); }
+.mt.train { border-color: var(--brass); background: var(--brass-wash); color: var(--brass); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.myrole { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin: 0 0 20px; padding: 12px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 0.92rem; }
+.myrole .m-label { margin-right: 4px; font: 500 0.64rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+
+/* Experience */
+.kit { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.role-head { padding-top: 22px; border-top: 1px solid var(--rule); margin-bottom: 8px; }
+.role-title { margin: 10px 0 4px; font: 350 clamp(1.5rem, 2.6vw, 2rem)/1.15 var(--f-display); }
+.role-head .org { margin: 0 0 12px; }
+.xp { border-bottom: 1px solid var(--rule); }
+.xp-row { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: 12px 40px; padding: 24px 0; border-top: 1px solid var(--rule-soft); }
+.xp-row h3 { margin: 0; font: 400 1.2rem/1.25 var(--f-display); }
+.xp-row p { margin: 0; color: var(--dim); }
+.edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px; margin-top: 56px; }
+@media (max-width: 860px) { .xp-row { grid-template-columns: minmax(0, 1fr); } }
+
+/* Vendor agreements */
+.case.agr { border-bottom: 1px solid var(--rule); }
+.thresh { display: grid; gap: 14px; margin-top: 24px; }
+.thresh > div { padding-left: 14px; border-left: 1px solid var(--rule); }
+.thresh .t-k { margin: 0; font: 500 0.64rem/1.4 var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+.thresh .t-v { margin: 2px 0 0; font: 400 1.3rem/1.2 var(--f-display); }
+.split { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 48px; border: 1px solid var(--rule); background: var(--rule); }
+.split > div { padding: 24px; background: var(--ink-2); }
+.split .m-tag { color: var(--brass); }
+.split ul { display: grid; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; font-size: 0.93rem; color: var(--dim); }
+.split li { position: relative; padding-left: 20px; }
+.split li::before { content: ""; position: absolute; left: 0; top: 0.85em; width: 10px; height: 1px; background: var(--brass-dim); }
+.split-note { max-width: 70ch; margin: 16px 0 0; font-size: 0.93rem; color: var(--dim); }
+@media (max-width: 700px) { .split { grid-template-columns: minmax(0, 1fr); } .split > div { padding: 20px; } }
+
+/* Vendor section additions */
+.case.agr dl > div { grid-template-columns: 150px minmax(0, 1fr); }
+.case dd ul.lab { padding-left: 0; gap: 12px; list-style: none; }
+.case dd ul.lab strong { color: var(--text); font-weight: 500; }
+.case.onb { margin-top: 56px; border-bottom: 1px solid var(--rule); }
+@media (max-width: 860px) { .case.agr dl > div { grid-template-columns: minmax(0, 1fr); } }
+
+/* Learning */
+.c-desc { margin: 0 0 16px; font-size: 0.93rem; color: var(--dim); }
+.done { display: flex; align-items: center; gap: 8px; margin: 18px 0 0; font: 500 0.66rem var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--ok); }
+.done::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--ok); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .v-rows i, .fade { animation: none; }
+  * { transition: none !important; }
+}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top-of-page">Sk Abdul <span>Farzon</span></a>
+    <nav aria-label="Sections">
+      <a href="#do">What I do</a>
+      <a href="#training">Training</a>
+      <a href="#results">Results</a>
+      <a href="#trail">Trail</a>
+      <a href="#cases">Cases</a>
+      <a href="#skills">Skills</a>
+      <a href="#career">Experience</a>
+      <a class="keep" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top-of-page">
+
+  <section class="hero" aria-labelledby="h1">
+    <div>
+      <p class="eyebrow">Finance Operations · Accounts Payable · Procure-to-Pay</p>
+      <h1 id="h1">Supplier payments that leave <em>the same day.</em></h1>
+      <p class="lede">I am Sk Abdul Farzon, a finance operations executive at <strong>Swiggy</strong>. For three years I have handled supplier payments from the Purchase Requisition to release in <strong>Oracle Fusion Cloud</strong>. I replaced a 7-day payment path with Advance POs, and brought corporate card invoice mismatches down from over 40% to about 2%. I also train junior colleagues on PR, GRN, advance closure and approval workflows.</p>
+      <div class="cta-row">
+        <a class="btn primary" href="#trail">Follow a payment</a>
+        <a class="btn" href="#training">Training &amp; leadership</a>
+        <a class="btn" href="#results">See the results</a>
+      </div>
+    </div>
+
+    <aside class="voucher" aria-label="Illustrative payment flow">
+      <div class="v-head"><span>Payment voucher</span><span>Illustrative flow</span></div>
+      <ol class="v-rows">
+        <li style="--n:0"><i></i><span>Purchase Requisition raised</span><b>PR</b></li>
+        <li style="--n:1"><i></i><span>Advance PO approved once</span><b>PO</b></li>
+        <li style="--n:2"><i></i><span>GRN booked against advance</span><b>GRN</b></li>
+        <li style="--n:3"><i></i><span>Invoice validated, three-way match</span><b>3WM</b></li>
+        <li style="--n:4"><i></i><span>Released by Treasury</span><b>TRSY</b></li>
+        <li style="--n:5"><i></i><span>UTR shared with supplier</span><b>UTR</b></li>
+      </ol>
+      <div class="v-foot"><span>UTR</span><span class="utr"></span></div>
+      <div class="stamp">Released · same day</div>
+    </aside>
+  </section>
+
+  <section class="block" id="do" aria-labelledby="do-h">
+    <div class="sec-head">
+      <p class="sec-label">What I do</p>
+      <h2 id="do-h">I execute, coordinate, resolve and train</h2>
+      <p class="sec-sub">Four ways I work inside Procure-to-Pay and Finance Operations. Each one says what I do myself and what other teams own.</p>
+    </div>
+    <div class="modes">
+      <article class="mode">
+        <p class="m-tag">Execute</p>
+        <h3>Run the P2P workflow</h3>
+        <ul>
+          <li>Raise PRs and GRNs for the business in Oracle Fusion Cloud</li>
+          <li>Raise Advance POs for major suppliers</li>
+          <li>Validate invoices and run three-way match</li>
+          <li>Send the UTR to the supplier after payment</li>
+        </ul>
+      </article>
+      <article class="mode">
+        <p class="m-tag">Coordinate</p>
+        <h3>Keep approvals and payments moving</h3>
+        <ul>
+          <li>Follow up pending approvals, and get one-time approval from the relevant head when needed</li>
+          <li>Follow every payment request to Treasury, who release the payment</li>
+          <li>Work with the GST team, who own TDS</li>
+          <li>Work with Controller, Business Finance and Legal on vendor agreements</li>
+        </ul>
+      </article>
+      <article class="mode">
+        <p class="m-tag">Resolve</p>
+        <h3>Close queries, discrepancies and escalations</h3>
+        <ul>
+          <li>Finance and accounts queries from the business</li>
+          <li>Invoice discrepancies, including invoices returned with notes</li>
+          <li>Escalations across PR, PO, GRN, invoices, reconciliation and accounting operations</li>
+          <li>Corporate card invoice mismatches</li>
+        </ul>
+      </article>
+      <article class="mode train">
+        <p class="m-tag">Train</p>
+        <h3>Teach the process and share changes</h3>
+        <ul>
+          <li>Train junior colleagues on PR, GRN, advance closure and approval workflows</li>
+          <li>Communicate new tool features, implementations and process changes in Oracle Fusion Cloud and SAP Concur</li>
+          <li>Lead knowledge-sharing and tool-training sessions at town halls, where applicable</li>
+        </ul>
+        <a class="go" href="#training">See training and leadership</a>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="training" aria-labelledby="training-h">
+    <div class="train-top">
+      <div>
+        <p class="sec-label">Process training and leadership</p>
+        <h2 id="training-h">Process Training &amp; Operational Leadership</h2>
+      </div>
+      <p class="train-lead">Alongside my own P2P work, I take the lead in <strong>training junior colleagues</strong> on our finance operations processes and internal tools. I also take ownership of <strong>communicating process changes</strong> and new tool features to the team.</p>
+    </div>
+
+    <div class="myrole"><span class="m-label">Tools I train on</span><span class="mt train">Oracle Fusion Cloud</span><span class="mt train">SAP Concur</span><span>Day-to-day process steps, and new implementations or features in these tools.</span></div>
+
+    <div class="t-wrap">
+      <div class="t-groups">
+        <div class="t-group">
+          <p class="m-tag">Hands-on process training</p>
+          <h3>The core P2P steps</h3>
+          <ul>
+            <li>Purchase Requisition (PR) creation</li>
+            <li>Goods Receipt Note (GRN) creation and the workflow around it</li>
+            <li>Prepayment and advance closure</li>
+            <li>Approval workflows, approval routing and process requirements</li>
+          </ul>
+        </div>
+        <div class="t-group">
+          <p class="m-tag">Standards and execution</p>
+          <h3>Doing it correctly</h3>
+          <ul>
+            <li>Standard operating procedures (SOPs) and process dependencies</li>
+            <li>Common errors and the correct execution steps</li>
+          </ul>
+        </div>
+        <div class="t-group">
+          <p class="m-tag">Change communication</p>
+          <h3>Keeping the team current</h3>
+          <ul>
+            <li>New tool features and implementations in Oracle Fusion Cloud and SAP Concur</li>
+            <li>Process changes and workflow updates</li>
+            <li>Passing each change on to junior team members</li>
+          </ul>
+        </div>
+        <div class="t-group">
+          <p class="m-tag">Knowledge sharing</p>
+          <h3>Building team capability</h3>
+          <ul>
+            <li>Knowledge-sharing and tool-training sessions at town hall meetings, where applicable</li>
+            <li>Team capability development</li>
+            <li>Process consistency and smoother adoption of operational changes</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="sub-head">How a change reaches the team</h3>
+    <p class="sub-note">The path I follow when a tool feature, process or workflow changes.</p>
+    <ol class="flow" style="--cols:4">
+      <li><span class="f-n">1</span><span class="f-mode">Trigger</span><h4>A change arrives</h4><p>A new feature or implementation in Oracle Fusion Cloud or SAP Concur, a process change or a workflow update.</p></li>
+      <li><span class="f-n">2</span><span class="f-mode">Train</span><h4>I communicate it</h4><p>I take ownership of explaining the change to junior team members.</p></li>
+      <li><span class="f-n">3</span><span class="f-mode">Train</span><h4>I walk them through</h4><p>Steps, dependencies and common errors, in town hall or tool-training sessions where applicable.</p></li>
+      <li><span class="f-n">4</span><span class="f-mode">Outcome</span><h4>Consistent execution</h4><p>Better team capability, process consistency and smoother adoption.</p></li>
+    </ol>
+
+    <p class="t-note">In short: I can run the process, fix what breaks, and bring colleagues up to speed on both.</p>
+  </section>
+
+  <section class="block" id="results" aria-labelledby="results-h">
+    <div class="sec-head">
+      <p class="sec-label">Results</p>
+      <h2 id="results-h">What changed after I took over the process</h2>
+      <p class="sec-sub">Three fixes, each one measured against how things worked before. The bar and day scales are drawn to the same units on both sides.</p>
+    </div>
+
+    <div class="ledger">
+      <div class="l-row head" aria-hidden="true"><span>Measure</span><span>Before</span><span>After</span></div>
+
+      <div class="l-row">
+        <div class="metric">
+          <h3>Urgent supplier payments</h3>
+          <p>Hotels want payment right after a booking is confirmed. The standard SOP took about a week.</p>
+        </div>
+        <div class="cell before" data-label="Before">
+          <div class="days" role="img" aria-label="Seven days filled">
+            <span class="d">D1</span><span class="d">D2</span><span class="d">D3</span><span class="d">D4</span><span class="d">D5</span><span class="d">D6</span><span class="d">D7</span>
+          </div>
+          <p class="val">About 7 days</p>
+        </div>
+        <div class="cell after" data-label="After">
+          <div class="days" role="img" aria-label="One day filled">
+            <span class="d on">D1</span><span class="d off">D2</span><span class="d off">D3</span><span class="d off">D4</span><span class="d off">D5</span><span class="d off">D6</span><span class="d off">D7</span>
+          </div>
+          <p class="val">Same day</p>
+        </div>
+      </div>
+
+      <div class="l-row">
+        <div class="metric">
+          <h3>Corporate card invoice mismatch</h3>
+          <p>About 25 cards across 6 teams, 500 to 1,500 transactions a month, tracked in SAP Concur.</p>
+        </div>
+        <div class="cell before" data-label="Before">
+          <div class="track" role="img" aria-label="Over 40 percent of a 50 percent scale">
+            <span class="fill risk" style="width:80%"></span>
+            <span class="fill more" style="left:80%;width:8%"></span>
+          </div>
+          <div class="axis" aria-hidden="true"><span style="left:0">0</span><span style="left:20%">10</span><span style="left:40%">20</span><span style="left:60%">30</span><span style="left:80%">40</span><span style="left:100%">50%</span></div>
+          <p class="val">Over 40%</p>
+        </div>
+        <div class="cell after" data-label="After">
+          <div class="track" role="img" aria-label="About 2 percent of a 50 percent scale">
+            <span class="fill good" style="width:4%"></span>
+          </div>
+          <div class="axis" aria-hidden="true"><span style="left:0">0</span><span style="left:20%">10</span><span style="left:40%">20</span><span style="left:60%">30</span><span style="left:80%">40</span><span style="left:100%">50%</span></div>
+          <p class="val">About 2%</p>
+        </div>
+      </div>
+
+      <div class="l-row last">
+        <div class="metric">
+          <h3>Requests for major suppliers</h3>
+          <p>50+ suppliers, up to about Rs. 2 Cr each. Approvals now happen in advance, not on every request.</p>
+        </div>
+        <div class="cell before" data-label="Before">
+          <div class="ticks" role="img" aria-label="Ten to fifteen requests a day">
+            <span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t"></span><span class="t maybe"></span><span class="t maybe"></span><span class="t maybe"></span><span class="t maybe"></span><span class="t maybe"></span>
+          </div>
+          <p class="val">10–15 PRs a day</p>
+        </div>
+        <div class="cell after" data-label="After">
+          <div class="blk">Advance PO · approved once</div>
+          <p class="val">Approved in advance</p>
+        </div>
+      </div>
+    </div>
+
+    <dl class="facts">
+      <div><dt>At Swiggy</dt><dd>3 years</dd></div>
+      <div><dt>Advance PO suppliers</dt><dd>50+</dd></div>
+      <div><dt>Vendors onboarded</dt><dd>200+</dd></div>
+      <div><dt>Invoices a month</dt><dd>50–150</dd></div>
+    </dl>
+  </section>
+
+  <section class="block" id="trail" aria-labelledby="trail-h">
+    <div class="sec-head">
+      <p class="sec-label">The payment trail</p>
+      <h2 id="trail-h">Follow one payment from request to UTR</h2>
+      <p class="sec-sub">Seven stages, in the order they happen. Select a stage to see my part in it, what other teams own, and how much of it I handle.</p>
+    </div>
+    <div class="trail">
+      <div class="stages" id="stages" role="tablist" aria-orientation="vertical" aria-label="Payment stages"></div>
+      <div class="panel" id="panel" role="tabpanel" tabindex="0"></div>
+    </div>
+    <h3 class="sub-head">Advance and prepayment closure</h3>
+    <p class="sub-note">A separate workflow from the payment trail. It starts with an estimate and ends only when the advance is closed.</p>
+    <ol class="flow" style="--cols:6">
+      <li><span class="f-n">1</span><span class="f-mode">Execute</span><h4>Estimate</h4><p>Collect estimated spend from the business for each major supplier.</p></li>
+      <li><span class="f-n">2</span><span class="f-mode">Coordinate</span><h4>Approve once</h4><p>Get one-time approval from all approvers.</p></li>
+      <li><span class="f-n">3</span><span class="f-mode">Execute</span><h4>Raise the Advance PO</h4><p>Raise the PO. Treasury releases the payment.</p></li>
+      <li><span class="f-n">4</span><span class="f-mode">Execute</span><h4>Use in parts</h4><p>Split the advance by value so GRNs use it up in parts.</p></li>
+      <li><span class="f-n">5</span><span class="f-mode">Coordinate</span><h4>Collect invoices</h4><p>Collect invoices from suppliers or the business.</p></li>
+      <li><span class="f-n">6</span><span class="f-mode">Execute</span><h4>Close on time</h4><p>Close within the 90-day SOP limit. Keep ageing current in the tracker.</p></li>
+    </ol>
+  </section>
+
+  <section class="block" id="cases" aria-labelledby="cases-h">
+    <div class="sec-head">
+      <p class="sec-label">Case files</p>
+      <h2 id="cases-h">Four cases, how I handled them</h2>
+    </div>
+
+    <article class="case">
+      <div>
+        <p class="tag">Process redesign</p>
+        <h3>Advance POs for major suppliers</h3>
+      </div>
+      <dl>
+        <div><dt>Situation</dt><dd>Payments took about 7 days under the SOP. That hurt supplier relationships, and hotels in particular want payment right after a booking is confirmed.</dd></div>
+        <div><dt>What I did</dt><dd>
+          <ul>
+            <li>Collected estimated spend from the business for each major supplier.</li>
+            <li>Got one-time approval from all approvers and raised Advance POs, replacing the 10–15 PRs raised daily.</li>
+            <li>Split suppliers into big (with agreement) and small (without agreement), and moved frequent urgent payments to Advance POs.</li>
+          </ul>
+        </dd></div>
+        <div><dt>Outcome</dt><dd class="out">Urgent payments go out the same day, and payment-delay escalations dropped.</dd></div>
+      </dl>
+    </article>
+
+    <article class="case">
+      <div>
+        <p class="tag">Reconciliation</p>
+        <h3>Corporate cards in SAP Concur</h3>
+      </div>
+      <dl>
+        <div><dt>Situation</dt><dd>About 25 cards across 6 teams, 500 to 1,500 transactions and Rs. 10–50L a month. Invoice mismatches ran above 40%.</dd></div>
+        <div><dt>What I did</dt><dd>
+          <ul>
+            <li>Collected and checked invoices, then uploaded them.</li>
+            <li>Put mismatches into one standard document with approval from each team's point of contact.</li>
+            <li>Cleared old expenses with no proof through one-time approval, and recharged cards on time.</li>
+          </ul>
+        </dd></div>
+        <div><dt>Outcome</dt><dd class="out">Mismatches fell from over 40% to about 2%.</dd></div>
+      </dl>
+    </article>
+
+    <article class="case agr">
+      <div>
+        <p class="tag">Vendor management · SOP adherence</p>
+        <h3>Vendor Management &amp; Agreement Governance</h3>
+        <div class="thresh">
+          <div><p class="t-k">SOP requires an agreement</p><p class="t-v">Above Rs. 50 lakh</p></div>
+          <div><p class="t-k">Small-vendor advances</p><p class="t-v">Up to Rs. 10 lakh</p></div>
+        </div>
+      </div>
+      <dl>
+        <div><dt>Situation</dt><dd>Under the Finance and Legal SOP, agreements are mandatory for transactions exceeding Rs. 50 lakh. However, engagements with smaller vendors involving advances of up to Rs. 10 lakh can also expose the business to financial and contractual risks when written agreements are absent.</dd></div>
+        <div><dt>Process challenge</dt><dd>Once a vendor signs the agreement, the document must undergo review by five internal teams. Without structured follow-ups and timely clarification of outstanding issues, the approval process can stall, delaying agreement finalization and potentially affecting business operations.</dd></div>
+        <div><dt>My contribution</dt><dd>
+          <ul class="lab">
+            <li><strong>Agreement initiation:</strong> Initiated the applicable agreement process upon managerial instruction, in accordance with internal SOP requirements.</li>
+            <li><strong>Vendor coordination:</strong> Communicated with vendors, shared company agreement drafts, and coordinated their review, consent and signatures.</li>
+            <li><strong>Cross-functional collaboration:</strong> Coordinated agreement reviews with GST Compliance, Accounts Controller, Business, Business Finance and Legal teams.</li>
+            <li><strong>Issue resolution:</strong> Tracked pending reviews, facilitated clarifications, coordinated issue resolution, and escalated delays where necessary.</li>
+            <li><strong>Approval management:</strong> Facilitated the agreement through the prescribed internal approval workflow and coordinated submission for final sign-off.</li>
+          </ul>
+        </dd></div>
+        <div><dt>Process improvement proposal</dt><dd>Proposed extending written agreement coverage to smaller-vendor engagements involving advance payments, recognizing that lower transaction values do not eliminate financial or contractual exposure. Formalizing agreed terms helps establish accountability, clarify obligations, mitigate potential disputes, and protect the company's business interests.</dd></div>
+        <div><dt>Outcome</dt><dd class="out">Coordinated the agreement review and approval process for vendors with transaction values exceeding Rs. 50 lakh. Following implementation of the agreement process, purchase orders (POs) no longer required repeated approvals.</dd></div>
+      </dl>
+    </article>
+
+    <h3 class="sub-head">Agreement workflow: who does what</h3>
+    <p class="sub-note">I coordinate the agreement from first draft to final sign-off. Each review, approval and signature belongs to the team named.</p>
+    <ol class="flow" style="--cols:6">
+      <li><span class="f-n">1</span><span class="f-mode">Initiate</span><h4>Start when instructed</h4><p>My manager instructs. I start the applicable agreement process under the SOP.</p></li>
+      <li><span class="f-n">2</span><span class="f-mode">Vendor communication</span><h4>Send the draft</h4><p>Share the company agreement draft and coordinate review, consent and signature.</p></li>
+      <li><span class="f-n">3</span><span class="f-mode">Coordinate</span><h4>Run the reviews</h4><p>On the vendor-signed draft: GST Compliance, Accounts Controller, Business, Business Finance and Legal review.</p></li>
+      <li><span class="f-n">4</span><span class="f-mode">Resolve</span><h4>Clear the issues</h4><p>Track pending reviews, facilitate clarifications, coordinate resolution, escalate delays where necessary.</p></li>
+      <li><span class="f-n">5</span><span class="f-mode">Coordinate</span><h4>Approval workflow</h4><p>Move the agreement through the prescribed approval workflow.</p></li>
+      <li><span class="f-n">6</span><span class="f-mode">Coordinate</span><h4>Final sign-off</h4><p>Coordinate submission to the designated final sign-off.</p></li>
+    </ol>
+
+    <div class="split">
+      <div>
+        <p class="m-tag">I coordinate</p>
+        <ul>
+          <li>Starting the process when instructed</li>
+          <li>Vendor communication and the signed draft</li>
+          <li>Reviews across five teams, and pending follow-ups</li>
+          <li>Clarifications, issue resolution and escalation</li>
+          <li>Movement through the approval workflow and into final sign-off</li>
+        </ul>
+      </div>
+      <div>
+        <p class="m-tag">Others review, approve and sign</p>
+        <ul>
+          <li>GST Compliance, Accounts Controller, Business, Business Finance and Legal review the draft</li>
+          <li>Approvers in the prescribed workflow approve it</li>
+          <li>The designated final sign-off authority signs off</li>
+        </ul>
+      </div>
+    </div>
+    <p class="split-note">I do not give legal or financial approval, and I do not sign off agreements. My role is to keep the agreement moving, the vendor informed and the SOP followed.</p>
+
+    <article class="case onb">
+      <div>
+        <p class="tag">Vendor operations · Onboarding</p>
+        <h3>Vendor onboarding: domestic and foreign companies</h3>
+      </div>
+      <dl>
+        <div><dt>Scope</dt><dd>New businesses brought on as vendors, both Indian and foreign companies. The vendor's country of origin decides which documents are needed.</dd></div>
+        <div><dt>What I did</dt><dd>
+          <ul>
+            <li>Collected the documents required for the vendor's country of origin.</li>
+            <li>Cross-verified the documents.</li>
+            <li>Sent the onboarding request for Finance and VP approval.</li>
+            <li>Created the Vendor Code in the system after approval.</li>
+          </ul>
+        </dd></div>
+        <div><dt>Control</dt><dd>Finance and the VP approve the vendor. The Vendor Code is created only after that approval.</dd></div>
+        <div><dt>Outcome</dt><dd class="out">200+ domestic and foreign vendors onboarded.</dd></div>
+      </dl>
+    </article>
+
+    <h3 class="sub-head">Onboarding workflow: approval comes before the Vendor Code</h3>
+    <p class="sub-note">The same path for Indian and foreign companies. Only the documents collected differ.</p>
+    <ol class="flow" style="--cols:5">
+      <li><span class="f-n">1</span><span class="f-mode">Identify</span><h4>Know the origin</h4><p>Indian or foreign company. This decides the documents needed.</p></li>
+      <li><span class="f-n">2</span><span class="f-mode">Coordinate</span><h4>Collect documents</h4><p>Collect the documents required for the vendor's country of origin.</p></li>
+      <li><span class="f-n">3</span><span class="f-mode">Execute</span><h4>Cross-verify</h4><p>Check the collected documents against each other.</p></li>
+      <li><span class="f-n">4</span><span class="f-mode">Coordinate</span><h4>Get approval</h4><p>Send for Finance and VP approval. They decide.</p></li>
+      <li><span class="f-n">5</span><span class="f-mode">Execute</span><h4>Create Vendor Code</h4><p>After approval, create the Vendor Code in the system.</p></li>
+    </ol>
+  </section>
+
+    <section class="block" id="skills" aria-labelledby="kit-h">
+    <div class="sec-head">
+      <p class="sec-label">Core competencies</p>
+      <h2 id="kit-h">Core competencies across P2P and FinOps</h2>
+    </div>
+    <div class="kit">
+      <div>
+        <h3>Procure-to-Pay and Accounts Payable</h3>
+        <ul>
+          <li>Procure-to-Pay (P2P) operations</li>
+          <li>Accounts Payable and invoice processing</li>
+          <li>PR, Advance PO, GRN</li>
+          <li>Invoice validation and three-way matching</li>
+          <li>Invoice discrepancy resolution and reconciliation support</li>
+          <li>Advance payment closure and advance ageing</li>
+          <li>Bank transfers, UTR sharing, Treasury coordination</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Compliance and vendors</h3>
+        <ul>
+          <li>GST compliance checks</li>
+          <li>TDS coordination</li>
+          <li>Vendor management and onboarding</li>
+          <li>Vendor communication</li>
+          <li>Corporate card reconciliation</li>
+          <li>Credit line monitoring</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Workflow and escalations</h3>
+        <ul>
+          <li>Workflow management</li>
+          <li>Approval workflows and follow-ups</li>
+          <li>Escalation management</li>
+          <li>Finance and accounts query resolution</li>
+          <li>Cross-functional coordination</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Training and knowledge transfer</h3>
+        <ul>
+          <li>Process training on Oracle Fusion Cloud and SAP Concur for junior colleagues</li>
+          <li>Knowledge transfer and tool training</li>
+          <li>Process change communication</li>
+          <li>SOP and common-error guidance</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Systems</h3>
+        <ul>
+          <li>Oracle Fusion Cloud</li>
+          <li>SAP Concur</li>
+          <li>Excel<small>PivotTables, VLOOKUP, XLOOKUP, trend forecasting</small></li>
+          <li>Google Sheets</li>
+          <li>SQL<small>Snowflake, working knowledge</small></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+    <section class="block" id="learning" aria-labelledby="learning-h">
+    <div class="sec-head">
+      <p class="sec-label">Learning</p>
+      <h2 id="learning-h">Learning to work with AI</h2>
+      <p class="sec-sub">Three courses on working with Claude and AI. Each covers a different part: using it, judging it and delegating to it.</p>
+    </div>
+    <div class="modes">
+      <article class="mode">
+        <p class="m-tag">Use it</p>
+        <h3>Claude 101</h3>
+        <p class="c-desc">Everyday work with Claude: writing clear prompts, organizing work in projects, creating artifacts, building skills, connecting tools and running research.</p>
+        <div class="tags"><span class="mt">Prompting</span><span class="mt">Projects</span><span class="mt">Artifacts</span><span class="mt">Skills</span><span class="mt">Research</span></div>
+        <p class="done">Completed</p>
+      </article>
+      <article class="mode">
+        <p class="m-tag">Judge it</p>
+        <h3>AI Fluency: Framework and Foundations</h3>
+        <p class="c-desc">Anthropic's 4D framework for working with AI. Covers how generative AI works, what it can and cannot do, and how to delegate, prompt, check results and use it responsibly.</p>
+        <div class="tags"><span class="mt">Delegation</span><span class="mt">Description</span><span class="mt">Discernment</span><span class="mt">Diligence</span></div>
+        <p class="done">Completed</p>
+      </article>
+      <article class="mode">
+        <p class="m-tag">Delegate to it</p>
+        <h3>Introduction to Claude Cowork</h3>
+        <p class="c-desc">Using Claude's desktop agent to work with files, folders and apps on a computer: the task loop, plugins and skills, file workflows, and managing multi-step tasks safely.</p>
+        <div class="tags"><span class="mt">Task loop</span><span class="mt">Plugins and skills</span><span class="mt">File workflows</span><span class="mt">Safe multi-step tasks</span></div>
+        <p class="done">Completed</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="block" id="career" aria-labelledby="career-h">
+    <div class="sec-head">
+      <p class="sec-label">Professional experience</p>
+      <h2 id="career-h">FinOps Executive at Swiggy</h2>
+    </div>
+    <div class="role-head">
+      <p class="when">Sep 2023 – Present</p>
+      <h3 class="role-title">FinOps Executive, P2P &amp; Finance Operations</h3>
+      <p class="org">Swiggy Limited (Bundl Technologies) · Engaged via CIEL HR</p>
+    </div>
+    <div class="xp">
+      <article class="xp-row">
+        <div><h3>P2P operations and PR-to-payment support</h3><div class="tags"><span class="mt">Execute</span><span class="mt">Coordinate</span></div></div>
+        <p>Raise 20–60 PRs a month and the matching GRNs in Oracle Fusion Cloud. Act as day-to-day FinOps owner and follow every payment request through to Treasury release.</p>
+      </article>
+      <article class="xp-row">
+        <div><h3>Business query processing</h3><div class="tags"><span class="mt">Resolve</span></div></div>
+        <p>Respond to finance and accounts queries from the business and work them through to resolution.</p>
+      </article>
+      <article class="xp-row">
+        <div><h3>Invoice validation and discrepancy resolution</h3><div class="tags"><span class="mt">Execute</span><span class="mt">Resolve</span></div></div>
+        <p>Take 50–150 invoices a month through validation and three-way match. Investigate discrepancies and return invoices that miss policy or GST rules (about 35%) with notes, then coordinate the fix.</p>
+      </article>
+      <article class="xp-row">
+        <div><h3>Advance payments and closure</h3><div class="tags"><span class="mt">Execute</span><span class="mt">Coordinate</span></div></div>
+        <p>Run Advance POs for 50+ major suppliers, up to about Rs. 2 Cr each. Split each advance so GRNs use it in parts, collect invoices, and close it within the 90-day SOP limit, with ageing kept in a tracker.</p>
+      </article>
+      <article class="xp-row">
+        <div><h3>GST compliance checks</h3><div class="tags"><span class="mt">Execute</span><span class="mt">Coordinate</span></div></div>
+        <p>Check invoices and documents against GST rules within my scope. Work with the GST team, who own TDS, to fix wrong deductions.</p>
+      </article>
+      <article class="xp-row">
+        <div><h3>Approval workflow coordination</h3><div class="tags"><span class="mt">Coordinate</span></div></div>
+        <p>Follow up pending approvals. When a request is outside SOP or a system approval is stuck, get one-time approval from the relevant head so payment is not delayed.</p>
+      </article>
+      <article class="xp-row">
+        <div><h3>Escalation management</h3><div class="tags"><span class="mt">Resolve</span></div></div>
+        <p>Handle escalations across PR, PO, GRN, invoices, reconciliation and accounting operations. Moving frequent urgent payments to Advance POs cut payment-delay escalations.</p>
+      </article>
+      <article class="xp-row">
+        <div><h3>Vendors and cross-functional coordination</h3><div class="tags"><span class="mt">Coordinate</span></div></div>
+        <p>Onboarded 200+ domestic and foreign vendors and share UTRs after payment. Drove agreements for vendors above Rs. 50L through GST, Controller, Business Finance and Legal. Reconcile corporate cards for 6 teams with each team's point of contact.</p>
+      </article>
+      <article class="xp-row">
+        <div><h3>Tool adoption, knowledge sharing and training</h3><div class="tags"><span class="mt train">Train</span></div></div>
+        <p>Train junior colleagues on PR, GRN, advance closure and approval workflows, and communicate new tool features, implementations and process changes in Oracle Fusion Cloud and SAP Concur. <a class="go" href="#training">See process training</a></p>
+      </article>
+    </div>
+
+    <div class="edu-grid">
+      <div class="edu">
+        <h3>Education</h3>
+        <div class="row"><span>Bachelor of Arts (English)</span><span>2024</span></div>
+        <div class="row"><span>Post Graduate Diploma in Computer Applications</span><span>2018</span></div>
+      </div>
+      <div class="edu">
+        <h3>Courses completed</h3>
+        <div class="row"><span>Advanced Excel</span><span>PivotTables to forecasting</span></div>
+        <div class="row"><span>SQL</span><span>CRUD operations</span></div>
+        <div class="row"><span>AWS Cloud Solution Architect</span><span>Udemy, completed</span></div>
+      </div>
+      <div class="edu">
+        <h3>Languages</h3>
+        <div class="langs">
+          <span class="chip">English</span><span class="chip">Hindi</span><span class="chip">Odia</span><span class="chip">Bengali</span><span class="chip">Tamil</span><span class="chip">Urdu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <p class="sec-label">Contact</p>
+    <h2 id="contact-h">Talk to me about your payables</h2>
+    <dl class="c-list">
+      <div class="c-row">
+        <dt>Email</dt>
+        <dd>skabdulfarzon@gmail.com</dd>
+        <button class="btn copy" type="button" id="copy-email" data-copy="skabdulfarzon@gmail.com">Copy</button>
+      </div>
+      <div class="c-row">
+        <dt>Phone</dt>
+        <dd>7205813319</dd>
+        <button class="btn copy" type="button" id="copy-phone" data-copy="7205813319">Copy</button>
+      </div>
+      <div class="c-row">
+        <dt>LinkedIn</dt>
+        <dd>linkedin.com/in/skabdulfarzon</dd>
+        <a class="btn" href="https://www.linkedin.com/in/skabdulfarzon" target="_blank" rel="noopener">Open</a>
+      </div>
+      <div class="c-row">
+        <dt>Location</dt>
+        <dd>Cuttack, Odisha 753001, India</dd>
+        <span></span>
+      </div>
+    </dl>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>Sk Abdul Farzon</span><span>Finance Operations · Accounts Payable · Procure-to-Pay</span></div>
+</footer>
+
+<script>
+(function () {
+  var stages = [
+    { k: 'PR', name: 'Requisition', tool: 'Oracle Fusion Cloud', mode: ['Execute'], mine: 'I create the PRs and GRNs.',
+      title: 'Raise the Purchase Requisition',
+      lead: 'Every request starts with a PR raised for the business in Oracle Fusion Cloud.',
+      points: ['Create 20–60 PRs a month, along with the matching GRNs.', 'Act as the day-to-day FinOps owner for the business and follow each request until Treasury releases the payment.'],
+      glance: [['Volume', '20–60 PRs a month'], ['System', 'Oracle Fusion Cloud']] },
+    { k: 'PO', name: 'Advance PO', tool: 'Major suppliers', mode: ['Execute', 'Coordinate'], mine: 'I raise the Advance PO and coordinate the one-time approvals.',
+      title: 'Replace repeat PRs with an Advance PO',
+      lead: 'For major suppliers, approvals happen once and in advance instead of on every request.',
+      points: ['Collect estimated spend from the business for each major supplier.', 'Get one-time approval from all approvers, then raise the Advance PO.', 'Split suppliers into big (with agreement) and small (without agreement), and move frequent urgent payments to Advance POs.'],
+      glance: [['Suppliers', '50+ major suppliers'], ['Size', 'Up to about Rs. 2 Cr each'], ['Replaces', '10–15 PRs raised daily']] },
+    { k: 'GRN', name: 'GRN and ageing', tool: '90-day SOP limit', mode: ['Execute', 'Coordinate'], mine: 'I book the GRNs and collect the invoices.',
+      title: 'Use the advance in parts and close it on time',
+      lead: 'An advance only helps if it is used up and closed inside the policy window.',
+      points: ['Split each advance by value so GRNs use it up in parts.', 'Collect invoices from suppliers or the business.', 'Close the advance within the 90-day SOP limit, with ageing kept up to date in a tracker.'],
+      glance: [['Limit', '90 days (SOP)'], ['Tracker', 'Advance ageing']] },
+    { k: 'INV', name: 'Invoice match', tool: 'Three-way match', mode: ['Execute', 'Resolve'], mine: 'I validate and match invoices, and work through discrepancies.',
+      title: 'Validate and match the invoice',
+      lead: 'Invoices only move forward when they meet policy and GST rules.',
+      points: ['Upload invoices and take them through validation and three-way match.', 'Return invoices that do not meet policy or GST rules, with notes.'],
+      glance: [['Volume', '50–150 invoices a month'], ['Returned', 'About 35%'], ['Checks', 'Policy, GST, three-way match']] },
+    { k: 'APR', name: 'Approvals', tool: 'Outside SOP', mode: ['Coordinate'], mine: 'I follow up approvals. The approvers decide.',
+      title: 'Clear stuck approvals',
+      lead: 'A request outside the SOP, or an approver on leave with the system approval stuck, should not hold a payment.',
+      points: ['Get one-time approval from the relevant head: VP, AVP, category head, director, Finance head or GM, so payment is not delayed.'],
+      glance: [['Trigger', 'Outside SOP, or approver on leave'], ['Approvers', 'VP to GM']] },
+    { k: 'TRY', name: 'Treasury', tool: 'Bank transfers', mode: ['Coordinate'], mine: 'Treasury releases the payment. I follow every request through to release.',
+      title: 'Release through Treasury',
+      lead: 'The payment is not finished until Treasury has released it.',
+      points: ['Follow every payment request through to Treasury release.', 'Check bank transfers and credit lines.'],
+      glance: [['Coordination', 'Treasury'], ['Checks', 'Bank transfers, credit lines']] },
+    { k: 'UTR', name: 'UTR and tax', tool: 'GST team', mode: ['Execute', 'Coordinate'], mine: 'I send the UTR. The GST team owns TDS.',
+      title: 'Confirm to the supplier and fix the tax',
+      lead: 'Suppliers get proof of payment, and tax deductions get corrected when they are wrong.',
+      points: ['Send the UTR to the supplier after payment.', 'Work with the GST team, who own TDS, to fix wrong deductions.'],
+      glance: [['Proof', 'UTR shared'], ['Tax', 'GST team owns TDS']] }
+  ];
+
+  var tabs = document.getElementById('stages');
+  var panel = document.getElementById('panel');
+  var current = 0;
+
+  stages.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'stage';
+    b.id = 'stage-' + i;
+    b.setAttribute('role', 'tab');
+    b.setAttribute('aria-controls', 'panel');
+    b.innerHTML = '<span class="n">' + (i + 1) + '</span><span><span class="k">' + s.k + '</span>' + s.name + '</span>';
+    b.addEventListener('click', function () { select(i, true); });
+    tabs.appendChild(b);
+  });
+
+  function select(i, animate) {
+    current = i;
+    var s = stages[i];
+    var nodes = tabs.children;
+    for (var n = 0; n < nodes.length; n++) {
+      var on = n === i;
+      nodes[n].setAttribute('aria-selected', on ? 'true' : 'false');
+      nodes[n].tabIndex = on ? 0 : -1;
+    }
+    panel.setAttribute('aria-labelledby', 'stage-' + i);
+    var html = '<p class="meta">Stage ' + (i + 1) + ' of ' + stages.length + ' · ' + s.tool + '</p>' +
+      '<h3>' + s.title + '</h3>' +
+      '<div class="myrole"><span class="m-label">My part</span>' + s.mode.map(function (m) { return '<span class="mt">' + m + '</span>'; }).join('') + '<span>' + s.mine + '</span></div>' +
+      '<p class="lead">' + s.lead + '</p>' +
+      '<ul>' + s.points.map(function (p) { return '<li>' + p + '</li>'; }).join('') + '</ul>' +
+      '<dl class="glance">' + s.glance.map(function (g) { return '<div><dt>' + g[0] + '</dt><dd>' + g[1] + '</dd></div>'; }).join('') + '</dl>';
+    panel.innerHTML = html;
+    if (animate) {
+      panel.classList.remove('fade');
+      void panel.offsetWidth;
+      panel.classList.add('fade');
+    }
+  }
+
+  tabs.addEventListener('keydown', function (e) {
+    var k = e.key, next = null;
+    if (k === 'ArrowDown' || k === 'ArrowRight') next = (current + 1) % stages.length;
+    else if (k === 'ArrowUp' || k === 'ArrowLeft') next = (current - 1 + stages.length) % stages.length;
+    else if (k === 'Home') next = 0;
+    else if (k === 'End') next = stages.length - 1;
+    if (next === null) return;
+    e.preventDefault();
+    select(next, true);
+    tabs.children[next].focus();
+  });
+
+  select(0, false);
+
+  document.querySelectorAll('.copy').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var text = b.getAttribute('data-copy');
+      function done(ok) {
+        b.textContent = ok ? 'Copied' : 'Select text';
+        setTimeout(function () { b.textContent = 'Copy'; }, 1800);
+      }
+      function fallback() {
+        var el = b.closest('.c-row').querySelector('dd');
+        var r = document.createRange();
+        r.selectNodeContents(el);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(r);
+        done(false);
+      }
+      try {
+        navigator.clipboard.writeText(text).then(function () { done(true); }, fallback);
+      } catch (err) { fallback(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
